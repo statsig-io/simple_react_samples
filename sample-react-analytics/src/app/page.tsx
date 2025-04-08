@@ -1,8 +1,11 @@
 "use client";
 
+import { StatsigProvider } from "@statsig/react-bindings";
+import { StatsigAutoCapturePlugin } from '@statsig/web-analytics';
+
 import { useState } from "react";
 
-export default function Home() {
+function MyContent() {
   const [bananaCount, setBananaCount] = useState(0);
   const [showBanana, setShowBanana] = useState(false);
 
@@ -35,3 +38,18 @@ export default function Home() {
     </div>
   );
 }
+
+export default function Home() {
+  return (
+    <>
+    <StatsigProvider sdkKey="client-yr1tFsoqiCicrhc8p4Ylbn9oDjAD2ToPtBtDijsWSKQ" user={{}}
+    loadingComponent={
+        <div style={{ height: 100, width: 300, padding: 16 }}>Loading...</div>
+      }
+    options={{ plugins: [ new StatsigAutoCapturePlugin() ] , disableCompression: true}}
+    >
+      <MyContent />
+    </StatsigProvider>
+    </>
+  );
+};
