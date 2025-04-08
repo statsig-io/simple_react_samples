@@ -1,0 +1,18 @@
+{
+  "name": "simple-react-samples",
+  "version": "1.0.0",
+  "description": "A collection of simple React sample projects",
+  "private": true,
+  "workspaces": [
+    "sample-react-experiments",
+    "sample-react-flags",
+    "sample-react-xps"
+  ],
+  "scripts": {
+    "experiments": "cd sample-react-experiments && npm run dev",
+    "flags": "cd sample-react-flags && npm run dev",
+    "xps": "cd sample-react-xps && npm run dev"
+  },
+  "author": "",
+  "license": "ISC"
+} 
